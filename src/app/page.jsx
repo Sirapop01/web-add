@@ -43,13 +43,19 @@ export default function Home() {
       <div className="grid grid-cols-4 mt-3 gap-5">
         {postData && postData.length > 0 ? (
           postData.map(val => (
-            <div key={val.id} className="shadow-md p-5 rounded-md">
+            <div key={val._id} className="shadow-xl my-10 p-10 rounded-xl">
           <h4 className='text-2xl'>{val.title}</h4>
-          <Image src={val.img} width={300} height={0} alt={val.title} />
+          <Image className='my-3 rounded-md' 
+            src={val.img} 
+            width={300} 
+            height={0} 
+            alt={val.title} 
+            priority={true}
+          />
           <p>{val.content}</p>
-            <div>
+            <div className="mt-5">
               <Link className="bg-gray-500 text-white border py-2 px-3 rounded-md text-lg" href={`/edit/${val._id}`}>Edit</Link>
-              <Link className="bg-red-500 text-white border py-2 px-3 rounded-md text-lg" href="/delete">Delete</Link>
+            
             </div>
           </div>
           ))
