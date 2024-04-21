@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import DeleteBtn from "./DeleteBtn";
 
 export default function Home() {
 
@@ -55,7 +56,7 @@ export default function Home() {
           <p>{val.content}</p>
             <div className="mt-5">
               <Link className="bg-gray-500 text-white border py-2 px-3 rounded-md text-lg" href={`/edit/${val._id}`}>Edit</Link>
-            
+              <DeleteBtn id={val._id}/>
             </div>
           </div>
           ))
